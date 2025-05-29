@@ -3,22 +3,39 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 5173 ",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start -p 5173",
+    "lint": "next lint",
+    "sass": "sass ./styles/index.scss:./styles/index.css",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
   },
   "dependencies": {
     "axios": "^1.8.4",
+    "date-fns": "^4.1.0",
+    "embla-carousel": "^8.6.0",
+    "embla-carousel-wheel-gestures": "^8.0.2",
+    "eslint-config-next": "^15.3.3",
+    "framer-motion": "^12.15.0",
     "next": "^15.3.2",
+    "nextjs-toploader": "^3.8.16",
     "postcss": "^8.5.4",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "react-modal": "^3.16.3",
+    "react-player": "^2.16.0",
+    "sharp": "^0.34.2",
+    "tailwind-merge": "^3.3.0",
+    "tailwindcss-animate": "^1.0.7",
+    "tw-animate-css": "^1.3.2"
   },
   "devDependencies": {
     "@shadcn/ui": "^0.0.4",
     "@tailwindcss/postcss": "^4.1.8",
-    "sass": "^1.86.3",
+    "babel-plugin-react-compiler": "^19.1.0-rc.2",
+    "prettier": "^3.5.3",
+    "sass": "^1.89.0",
     "tailwindcss": "^4.1.8"
   }
 }
