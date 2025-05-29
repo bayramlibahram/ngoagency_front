@@ -1,7 +1,5 @@
-import React from 'react';
+import React from "react";
 
-export default function Page({ children }) {
-	return (
-		<>home page</>
-	)
+export default function Page() {
+  return <>home page</>;
 }

@@ -1,0 +1,51 @@
+.partnerSliderContainer {
+  background: #f5f5f5;
+}
+.sliderWrapper {
+  /*margin-bottom: 2rem;*/
+}
+.slideContent {
+  background: white;
+  /*border-radius: 0.75rem;*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dcb27f;
+  overflow: hidden;
+  position: relative;
+}
+.customPagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.dot {
+  width: 12px;
+  height: 12px;
+  background: #e5e7eb;
+  opacity: 1;
+  margin: 0 !important;
+  border: none;
+  cursor: pointer;
+}
+.dotActive {
+  position: relative;
+  background: #dcb27f !important;
+  width: 12px;
+  height: 12px;
+  opacity: 1;
+  margin: 0 !important;
+  border: none;
+  cursor: pointer;
+}
+.dotActive::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 2px solid #dcb27f;
+  border-radius: 50%;
+}

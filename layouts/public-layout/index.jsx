@@ -36,10 +36,10 @@ export default async function PublicLayout({ children, lang }) {
 
   return (
     <LanguageProvider>
-      <PageProvider navs={navigations}>
-        <Header lang={lang} navigations={navigations} />
+      <PageProvider navs={navigations || []}>
+        <Header lang={lang} navigations={navigations || []} />
         <LayoutMain>{children}</LayoutMain>
-        <Footer lang={lang} socials={socials} />
+        <Footer lang={lang} socials={socials || []} />
       </PageProvider>
     </LanguageProvider>
   );

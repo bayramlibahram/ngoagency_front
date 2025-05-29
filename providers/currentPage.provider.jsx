@@ -41,11 +41,7 @@ export const PageProvider = ({ children, navs }) => {
     setCurrentPages(flattenNavTree(navs));
   }, [navs]);
 
-
-  const value = useMemo(
-    () => ({ currentPages, setCurrentPages }),
-    [currentPages]
-  );
+  const value = useMemo(() => ({ currentPages, setCurrentPages }), [currentPages]);
 
   return <CurrentPageContext.Provider value={value}>{children}</CurrentPageContext.Provider>;
 };
