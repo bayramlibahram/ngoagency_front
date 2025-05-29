@@ -1,0 +1,19 @@
+/* width */
+::-webkit-scrollbar {
+  width: 50px;
+  border-radius: 15px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--pomegranate-dark);
+}
+//
+///* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--pomegranate-light);
+}
+//
+///* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--pomegranate-dark);
+}

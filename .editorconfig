@@ -1,0 +1,70 @@
+# EditorConfig helps maintain consistent coding styles across editors
+# https://editorconfig.org/
+
+root = true
+
+# All files
+[*]
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+max_line_length = 100
+
+# Markdown (do not trim trailing whitespace, as some editors show diffs for each line otherwise)
+[*.md]
+trim_trailing_whitespace = false
+insert_final_newline = true
+
+# JSON & JSONC (JSON with comments)
+[*.{json,jsonc}]
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# JavaScript/TypeScript/JSX/TSX
+[*.{js,jsx,ts,tsx}]
+indent_style = space
+indent_size = 2
+quote_type = double
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# YAML
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+
+# CSS, SCSS, LESS
+[*.{css,scss,less}]
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+
+# HTML/HTM
+[*.{html,htm}]
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+
+# Ignore minified files
+[*.min.*]
+indent_style = none
+insert_final_newline = false
+trim_trailing_whitespace = false
+
+# Shell scripts
+[*.sh]
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+
+# EditorConfig for config files themselves (optional, good for meta-consistency)
+[.editorconfig]
+indent_style = space
+indent_size = 2
+insert_final_newline = true
