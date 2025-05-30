@@ -6,6 +6,7 @@ import Navbar from "@/components/layout-components/navbar";
 import { Button } from "primereact/button";
 import Language from "@/components/layout-components/language";
 
+//TODO: Remove this component in avaliable
 export default function MenuOpen({ lang, navigations }) {
   const [visible, setVisible] = useState(false);
   return (

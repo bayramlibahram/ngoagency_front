@@ -7,6 +7,7 @@ import Navbar from "@/components/layout-components/navbar";
 import Socials from "@/components/layout-components/socials";
 import MenuOpen from "@/components/layout-components/menu-open";
 
+//Don't repeat you self -
 export default function HeaderTop({ lang, navigations, socials }) {
   return (
     <div className="md:py-4 header-top">

@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "@/components/ui/navbar";
 import LanguageBar from "@/components/layout-components/language-bar";
 import SiteLogo from "@/components/layout-components/site-logo";
-import { Search } from "lucide-react";
+// import { Search } from "lucide-react";
 
 export default function DesktopNavbar({ navigations, lang }) {
   return (
