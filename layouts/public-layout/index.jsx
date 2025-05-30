@@ -29,19 +29,18 @@ export default async function PublicLayout({ children, lang }) {
     lang: lang,
   };
 
-  // const [navigations, socials] = await Promise.all([
-  //   fetchNavigations(lang_obj),
-  //   fetchSocials(lang_obj),
-  // ]);
+  const [navigations, socials] = await Promise.all([
+    fetchNavigations(lang_obj),
+    fetchSocials(lang_obj),
+  ]);
 
   return (
-    <div className="bg-red-500 p-5 h-[500px]">{children}</div>
-    // <LanguageProvider>
-    //   <PageProvider navs={navigations || []}>
-    //     <Header lang={lang} navigations={navigations || []} />
-    //     <LayoutMain>{children}</LayoutMain>
-    //     <Footer lang={lang} socials={socials || []} />
-    //   </PageProvider>
-    // </LanguageProvider>
+    <LanguageProvider>
+      <PageProvider navs={navigations || []}>
+        <Header lang={lang} navigations={navigations || []} />
+        <LayoutMain>{children}</LayoutMain>
+        <Footer lang={lang} socials={socials || []} />
+      </PageProvider>
+    </LanguageProvider>
   );
 }
