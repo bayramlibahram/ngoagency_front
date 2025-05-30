@@ -1,4 +1,6 @@
 import React from "react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
 import LayoutMain from "@/components/layout-components/main";
 import Footer from "@/components/layout-components/footer";
 import Header from "@/components/layout-components/header";
@@ -11,6 +13,8 @@ import HeaderTop from "@/components/layout-components/header-top";
 
 const navigationService = new NavigationService();
 const socialService = new SocialService();
+
+
 
 const fetchNavigations = async ({ lang = "az" } = {}) => {
   try {
@@ -38,12 +42,16 @@ export default async function PublicLayout({ children, lang }) {
   // ]);
 
   return (
-      <div className="min-h-screen flex flex-col bg-white">
-        <HeaderTop />
-        <DesktopNavbar />
-        <LayoutMain>{children}</LayoutMain>
-        <Footer />
-      </div>
+    
+      
+        <div className="flex flex-col bg-white" style={{ minHeight: "100vh" }}>
+          <HeaderTop />
+          <DesktopNavbar />
+          <LayoutMain>{children}</LayoutMain>
+          <Footer />
+        </div>
+      
+    
     // <LanguageProvider>
     //   <PageProvider navs={navigations || []}>
     //     <Header lang={lang} navigations={navigations || []} />
