@@ -5,6 +5,9 @@ import Header from "@/components/layout-components/header";
 import { LanguageProvider } from "@/providers";
 import { NavigationService, SocialService } from "@/network/services";
 import { PageProvider } from "@/providers/currentPage.provider";
+import { ThemeProvider } from "@/components/layout-components/theme/theme-provider";
+import DesktopNavbar from "@/components/layout-components/desktop-navbar";
+import HeaderTop from "@/components/layout-components/header-top";
 
 const navigationService = new NavigationService();
 const socialService = new SocialService();
@@ -29,18 +32,24 @@ export default async function PublicLayout({ children, lang }) {
     lang: lang,
   };
 
-  const [navigations, socials] = await Promise.all([
-    fetchNavigations(lang_obj),
-    fetchSocials(lang_obj),
-  ]);
+  // const [navigations, socials] = await Promise.all([
+  //   fetchNavigations(lang_obj),
+  //   fetchSocials(lang_obj),
+  // ]);
 
   return (
-    <LanguageProvider>
-      <PageProvider navs={navigations || []}>
-        <Header lang={lang} navigations={navigations || []} />
+      <div className="min-h-screen flex flex-col bg-white">
+        <HeaderTop />
+        <DesktopNavbar />
         <LayoutMain>{children}</LayoutMain>
-        <Footer lang={lang} socials={socials || []} />
-      </PageProvider>
-    </LanguageProvider>
+        <Footer />
+      </div>
+    // <LanguageProvider>
+    //   <PageProvider navs={navigations || []}>
+    //     <Header lang={lang} navigations={navigations || []} />
+    //     <LayoutMain>{children}</LayoutMain>
+    //     <Footer lang={lang} socials={socials || []} />
+    //   </PageProvider>
+    // </LanguageProvider>
   );
 }
