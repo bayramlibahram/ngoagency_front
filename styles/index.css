@@ -1,3 +1,4 @@
+
 @charset "UTF-8";
 @tailwind base;
 @tailwind components;
@@ -29,8 +30,6 @@
 
 @layer base {
   :root {
-    --pomegranate-light: #ff6b6b;
-    --pomegranate-dark: #c0392b;
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
@@ -52,6 +51,7 @@
     --ring: 39 72% 52%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 224 20% 10%;
     --foreground: 0 0% 98%;
@@ -73,68 +73,66 @@
     --input: 240 3.7% 15.9%;
     --ring: 39 72% 52%;
   }
+
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground font-sans antialiased;
   }
+
   ::selection {
     @apply bg-primary/20 text-foreground;
   }
 }
+
 @layer components {
   .container-layout {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
+
   .nav-link {
     @apply text-foreground/80 hover:text-foreground transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full;
   }
+
   .nav-link-active {
     @apply text-foreground font-medium after:w-full;
   }
+
   .btn-language {
     @apply px-2 py-1 rounded-md text-sm font-medium text-foreground/70 hover:text-foreground hover:bg-accent transition-colors;
   }
+
   .btn-language-active {
     @apply text-foreground bg-accent;
   }
+
   /* Modern section title styles */
   .section-title {
-    @apply relative text-center text-3xl md:text-4xl font-bold text-gold-500 mb-6 font-["Times_New_Roman"] tracking-wide;
+    @apply relative text-center text-3xl md:text-4xl font-bold text-gold-500 mb-6 font-['Times_New_Roman'] tracking-wide;
     /*text-shadow: 2px 2px 4px rgba(0,0,0,0.1);*/
   }
+
   .section-divider {
     @apply relative mx-auto mb-8 flex items-center justify-center;
+    &::before {
+      content: "";
+      @apply absolute w-16 h-[2px] bg-gradient-to-r from-transparent via-gold-500 to-transparent;
+      left: calc(50% - 3rem);
+    }
+    &::after {
+      content: "✦";
+      @apply text-gold-500 text-xl opacity-80;
+    }
   }
-  .section-divider::before {
-    content: "";
-    @apply absolute w-16 h-[2px] bg-gradient-to-r from-transparent via-gold-500 to-transparent;
-    left: calc(50% - 3rem);
-  }
-  .section-divider::after {
-    content: "✦";
-    @apply text-gold-500 text-xl opacity-80;
-  }
+
   .section-subtitle {
     @apply text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-light;
     letter-spacing: 0.01em;
   }
-  /*.section-header {*/
-  /*  @apply text-center relative pb-16 overflow-hidden;*/
-  /*  &::before {*/
-  /*    content: "";*/
-  /*    @apply absolute -top-40 left-1/2 -translate-x-1/2 w-[120%] h-[200px];*/
-  /*    background: radial-gradient(circle at center, rgba(214, 154, 51, 0.05) 0%, transparent 70%);*/
-  /*  }*/
-  /*  &::after {*/
-  /*    content: "";*/
-  /*    @apply absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-16;*/
-  /*    background: linear-gradient(to bottom, rgba(214, 154, 51, 0.1), transparent);*/
-  /*    clip-path: polygon(0 0, 100% 0, 50% 100%);*/
-  /*  }*/
-  /*}*/
 }
+
 html {
   scrollbar-width: thin;
   scroll-behavior: smooth;

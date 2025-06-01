@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import React, { useEffect, useRef } from "react";
-import { motion, useAnimation, useInView } from "framer-motion";
+import React, {useEffect, useRef} from 'react';
+import {motion, useAnimation, useInView} from 'framer-motion';
 
 const HeaderTop = () => {
   const controls = useAnimation();
@@ -10,7 +10,7 @@ const HeaderTop = () => {
 
   useEffect(() => {
     if (isInView) {
-      controls.start("visible");
+      controls.start('visible');
     }
   }, [isInView, controls]);
 
@@ -20,9 +20,9 @@ const HeaderTop = () => {
       opacity: 1,
       transition: {
         duration: 0.6,
-        staggerChildren: 0.1,
-      },
-    },
+        staggerChildren: 0.1
+      }
+    }
   };
 
   const itemVariants = {
@@ -30,19 +30,16 @@ const HeaderTop = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
   };
 
   return (
     <div ref={bannerRef} className="relative overflow-hidden bg-gray-50 border-b border-gold-500/20 dark:bg-navy-950 py-4">
       {/* Background Pattern */}
-      <div
-        className="absolute inset-0 flex flex-row flex-wrap gap-2 p-0.5 pointer-events-none"
-        style={{ opacity: 0.1 }}
-      >
+      <div className="absolute inset-0 flex flex-row flex-wrap gap-2 p-0.5 pointer-events-none" style={{ opacity: 0.1 }}>
         {Array.from({ length: 250 }).map((_, i) => (
-          <div key={i} className="text-gold-500 w-[30px]">
+          <div key={i} className="text-gold-500" style={{ width:"30px" }}>
             +
           </div>
         ))}
@@ -59,38 +56,42 @@ const HeaderTop = () => {
           variants={itemVariants}
         >
           <div className="flex flex-col gap-3">
-            <div className="relative inline-block">
-              "Demokratiyanın inkişafı, vətəndaş cəmiyyətinin formalaşması Azərbaycanda dövlət
-              siyasətinin əsas istiqamətlərindən biridir."
+            <div className="relative">
+              "Demokratiyanın inkişafı, vətəndaş cəmiyyətinin formalaşması Azərbaycanda dövlət siyasətinin əsas istiqamətlərindən biridir."
+
               <motion.div
-                className="h-0.5 bg-gold-500 absolute left-0 bottom-0"
-                initial={{ width: 0 }}
-                animate={{ width: "100%" }}
-                transition={{ delay: 1, duration: 1 }}
+                  className="h-full bg-gold-500"
+                  initial={{ width: 0 }}
+                  animate={{ width: '100%' }}
+                  transition={{ delay: 1, duration: 1 }}
               />
             </div>
-            <div className="relative inline-block mt-2">
+            <div className="relative">
               <img
-                src={"/global/HA.png"}
-                alt="Heydər Əliyev"
-                className="w-full h-full object-contain"
-                style={{
-                  width: "10%",
-                  display: "inline-block",
-                }}
+                  src="/global/Signature_of_Heydar_Aliyev.png"
+                  alt="Heydər Əliyev"
+                  className="w-full h-full object-contain"
+                  style={{
+                    width:"10%",
+                    display:"inline-block",
+                  }}
               />
-              <div className="h-0.5 w-0 md:w-24 bg-gold-400 absolute right-0 bottom-0 mt-1"></div>
+              <div className="h-0.5 w-0 md:w-24 bg-gold-400 absolute right-0 bottom-0 mt-1">
+              </div>
             </div>
           </div>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="w-32 h-32 md:w-40 md:h-30 flex-shrink-0 z-20">
+        <motion.div
+          variants={itemVariants}
+          className="w-32 h-32 md:w-40 md:h-30 flex-shrink-0"
+        >
           <img
-            src={"/global/HA.png"}
+            src="/global/HA.png"
             alt="Heydər Əliyev"
             className="w-full h-full object-contain"
             style={{
-              width: "100%",
+              width:"100%",
             }}
           />
         </motion.div>

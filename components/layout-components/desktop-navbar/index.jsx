@@ -1,11 +1,12 @@
 'use client';
 
 import React, {useEffect, useState} from 'react';
+import { cn } from '@/lib/utils';
+
 import {ChevronDown, Facebook, Instagram, Menu, Search, Twitter, X, Youtube} from 'lucide-react';
 
 import { Input } from '@/components/ui/input';
 import { ThemeToggle } from '../theme/theme-toggle';
-import { cn } from '@/lib/utils';
 
 const navigation = [
   {
@@ -85,7 +86,7 @@ const DesktopNavbar = () => {
               {/* Left: Logo and Language */}
               <div className="flex items-center space-x-6">
                 <a href="/" className="flex items-center space-x-3">
-                  <img src="/logo-vertical.png" alt="logo" style={{
+                  <img src="/global/logo-vertical.png" alt="logo" style={{
                     width:"33%"
                   }}/>
                 </a>
@@ -100,7 +101,7 @@ const DesktopNavbar = () => {
                     <Input
                         type="search"
                         placeholder="Axtar..."
-                        className="w-64 pl-10 rounded-3xl"
+                        className="w-64 pl-10 rounded-full"
                     />
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                   </div>
