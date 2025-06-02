@@ -1,5 +1,7 @@
 import React from "react";
 
+import HomeView from "@/modules/home/views/home-view";
+
 export default function Page() {
-  return <>home page</>;
+  return <HomeView />
 }
