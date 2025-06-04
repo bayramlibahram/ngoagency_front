@@ -45,16 +45,10 @@ export default function Hero({ data, lang }) {
                   <AspectRatio ratio={16 / 10} className="overflow-hidden">
                     {/* Background Image with srcset for responsive images */}
                     <picture>
-                      <source
-                        media="(min-width: 1380px)"
-                        srcSet={`/media-sources/${slide.post_image}`}
-                      />
-                      <source
-                        media="(min-width: 768px)"
-                        srcSet={`/media-sources/${slide.post_image}`}
-                      />
+                      <source media="(min-width: 1280px)" srcSet={slide.images.desktop} />
+                      <source media="(min-width: 768px)" srcSet={slide.images.tablet} />
                       <img
-                        src={`/media-sources/${slide.post_image}`}
+                        src={slide.images.mobile}
                         alt={slide.title}
                         className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-[2s] hover:scale-110"
                         loading={index === 0 ? "eager" : "lazy"}
@@ -74,9 +68,9 @@ export default function Hero({ data, lang }) {
                         transition={{ duration: 0.6 }}
                         className="max-w-5xl backdrop-blur-sm bg-navy-950/20 p-8 rounded-2xl font-prata"
                       >
-                        {/* Title */}
+                        {/* Title, TODO: repair title by lang */}
                         <h2 className="md:text-xl lg:text-xl mb-6 leading-tight text-white">
-                          {slide[`title_${lang}`]}
+                          {/* {slide[`title_${lang}`]} */} {slide.title}
                         </h2>
 
                         {/* CTA Button */}
@@ -136,27 +130,36 @@ export default function Hero({ data, lang }) {
           >
             <ChevronRight className="w-6 h-6" />
           </button>
-
-          {/* Slide Indicators */}
-          <div className="absolute -bottom-12 left-0 right-0 flex justify-center items-center gap-3 py-4">
-            {data.map((_, index) => (
-              <button
-                key={index}
-                className={`h-2.5 rounded-full transition-all duration-300 ${
-                  index === currentSlide
-                    ? "w-10 bg-gold-500"
-                    : "w-2.5 bg-gray-400 hover:bg-gray-300"
-                }`}
-                onClick={() => {
-                  emblaApi?.scrollTo(index);
-                  setCurrentSlide(index);
-                }}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
         </div>
       </SectionWrapper>
+
+      {/* Slide Indicators */}
+      <div className="absolute -bottom-4 left-0 right-0 flex justify-center items-center gap-3 py-4">
+        {data.map((_, index) => (
+          <button
+            key={index}
+            className={`h-2.5 rounded-full transition-all duration-300 ${
+              index === currentSlide ? "w-10 bg-gold-500" : "w-2.5 bg-gray-400 hover:bg-gray-300"
+            }`}
+            onClick={() => {
+              emblaApi?.scrollTo(index);
+              setCurrentSlide(index);
+            }}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
+
+      <div
+        className="absolute inset-0 flex flex-row flex-wrap gap-2 p-0.5 pointer-events-none"
+        style={{ opacity: 0.1 }}
+      >
+        {Array.from({ length: 1000 }).map((_, i) => (
+          <div key={i} className="text-gold-500" style={{ width: "30px" }}>
+            +
+          </div>
+        ))}
+      </div>
     </section>
   );
 }
