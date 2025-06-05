@@ -8,13 +8,9 @@ import { LanguageProvider } from "@/providers";
 import { NavigationService, SocialService } from "@/network/services";
 import { PageProvider } from "@/providers/currentPage.provider";
 import { ThemeProvider } from "@/components/layout-components/theme/theme-provider";
-import DesktopNavbar from "@/components/layout-components/desktop-navbar";
-import HeaderTop from "@/components/layout-components/header-top";
 
 const navigationService = new NavigationService();
 const socialService = new SocialService();
-
-
 
 const fetchNavigations = async ({ lang = "az" } = {}) => {
   try {
@@ -36,22 +32,20 @@ export default async function PublicLayout({ children, lang }) {
     lang: lang,
   };
 
+  const navigations = [];
+
   // const [navigations, socials] = await Promise.all([
   //   fetchNavigations(lang_obj),
   //   fetchSocials(lang_obj),
   // ]);
 
   return (
-    
-      
-        <div className="flex flex-col" style={{ minHeight: "100vh" }}>
-          <HeaderTop />
-          <DesktopNavbar />
-          <LayoutMain>{children}</LayoutMain>
-          <Footer />
-        </div>
-      
-    
+    <div className="flex flex-col" style={{ minHeight: "100vh" }}>
+      <Header />
+      <LayoutMain>{children}</LayoutMain>
+      <Footer />
+    </div>
+
     // <LanguageProvider>
     //   <PageProvider navs={navigations || []}>
     //     <Header lang={lang} navigations={navigations || []} />

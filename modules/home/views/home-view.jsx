@@ -1,4 +1,6 @@
-import BlogsSection from "@/components/page-components/blogs-section";
+import style from "./style.module.css";
+
+import SectionTitle from "@/components/custom-components/section-title";
 import Hero from "@/components/page-components/hero";
 
 const data = [
@@ -93,12 +95,23 @@ const blogData = [
     views: 245,
   },
 ];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
 const HomeView = () => {
   return (
     <div className="mb-8">
       <Hero data={data} lang={""} />
-      <div>
-        <BlogsSection blogData={blogData} lang={"az"} />
+      
+      <div className={`${style["custom-margin"]}`}>
+        <SectionTitle title={"Son Xəbərlər"} variants={containerVariants} />
       </div>
     </div>
   );

@@ -3,7 +3,17 @@
 import React, { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
-import { ChevronDown, Facebook, Instagram, Menu, Search, Twitter, X, Youtube } from "lucide-react";
+import {
+  ChevronDown,
+  ChevronUp,
+  Facebook,
+  Instagram,
+  Menu,
+  Search,
+  Twitter,
+  X,
+  Youtube,
+} from "lucide-react";
 
 import { Input } from "@/components/ui/input";
 import { ThemeToggle } from "../theme/theme-toggle";
@@ -54,6 +64,7 @@ const DesktopNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [activeDropdownMobile, setActiveDropdownMobile] = useState([]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -72,8 +83,18 @@ const DesktopNavbar = () => {
     setActiveDropdown(null);
   };
 
+  const toggleDropdown = (title) => {
+    if (activeDropdownMobile.includes(title)) {
+      // varsa, cixar
+      setActiveDropdownMobile((prev) => prev.filter((item) => item !== title));
+    } else {
+      // yoxsa, elave edir
+      setActiveDropdownMobile((prev) => [...prev, title]);
+    }
+  };
+
   return (
-    <header
+    <div
       className={cn(
         "sticky top-0 z-50 transition-all duration-300 border-b",
         isScrolled ? "bg-background/95 backdrop-blur-md shadow-sm" : "dark:bg-navy-950"
@@ -92,18 +113,6 @@ const DesktopNavbar = () => {
                     className="w-full h-full object-fill"
                   />
                 </a>
-
-                {/* Middle Section */}
-                <div className="flex items-center justify-between">
-                  {/* Mobile Menu Button */}
-                  <button
-                    onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    className="lg:hidden p-2 hover:bg-accent rounded-md transition-colors"
-                    aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-                  >
-                    {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-                  </button>
-                </div>
               </div>
 
               {/*Right side*/}
@@ -155,8 +164,22 @@ const DesktopNavbar = () => {
                   </a>
                 </div>
 
-                {/*Theme changer*/}
-                <ThemeToggle />
+                <div className="flex items-center">
+                  {/* Middle Section */}
+                  <div className="flex items-center justify-between">
+                    {/* Mobile Menu Button */}
+                    <button
+                      onClick={() => setIsMenuOpen(!isMenuOpen)}
+                      className="lg:hidden p-2 hover:bg-accent rounded-md transition-colors"
+                      aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+                    >
+                      {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                    </button>
+                  </div>
+
+                  {/*Theme changer*/}
+                  <ThemeToggle />
+                </div>
               </div>
             </div>
           </div>
@@ -208,13 +231,28 @@ const DesktopNavbar = () => {
                 <div className="space-y-2">
                   {navigation.map((item) => (
                     <div key={item.title} className="relative">
-                      <a
-                        href={item.href}
-                        className="block py-2 px-4 text-foreground hover:text-primary transition-colors"
-                      >
-                        {item.title}
-                      </a>
-                      {item.children && (
+                      <div className="flex items-center">
+                        <a
+                          href={item.href}
+                          className="block py-2 px-4 text-foreground hover:text-primary transition-colors"
+                        >
+                          {item.title}
+                        </a>
+                        {item.children &&
+                          (activeDropdownMobile.length > 0 &&
+                          activeDropdownMobile.includes(item.title) ? (
+                            <ChevronUp
+                              className="ml-1 h-4 w-4 transition-transform group-hover:rotate-180"
+                              onClick={() => toggleDropdown(item.title)}
+                            />
+                          ) : (
+                            <ChevronDown
+                              className="ml-1 h-4 w-4 transition-transform group-hover:rotate-180"
+                              onClick={() => toggleDropdown(item.title)}
+                            />
+                          ))}
+                      </div>
+                      {item.children && activeDropdownMobile.includes(item.title) && (
                         <div className="pl-8 space-y-2 mt-2">
                           {item.children.map((child) => (
                             <a
@@ -273,7 +311,7 @@ const DesktopNavbar = () => {
           )}
         </div>
       </div>
-    </header>
+    </div>
   );
 };
 

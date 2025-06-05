@@ -35,7 +35,7 @@ export default function Hero({ data, lang }) {
   }, [emblaApi, currentSlide]);
 
   return (
-    <section className="relative">
+    <section className="relative overflow-hidden">
       <SectionWrapper>
         <div className="relative overflow-hidden rounded-2xl">
           <div className="overflow-hidden" ref={emblaRef}>
@@ -45,14 +45,14 @@ export default function Hero({ data, lang }) {
                   <AspectRatio ratio={16 / 10} className="overflow-hidden">
                     {/* Background Image with srcset for responsive images */}
                     <picture>
-                      <source media="(min-width: 1280px)" srcSet={slide.images.desktop} />
-                      <source media="(min-width: 768px)" srcSet={slide.images.tablet} />
+                      <source media="(min-width: 1000px)" srcSet={slide.images.desktop} />
+                      <source media="(min-width: 750px)" srcSet={slide.images.tablet} />
                       <img
                         src={slide.images.mobile}
                         alt={slide.title}
                         className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-[2s] hover:scale-110"
                         loading={index === 0 ? "eager" : "lazy"}
-                        sizes="100vw"
+                        // sizes="100vw"
                       />
                     </picture>
 
@@ -61,15 +61,15 @@ export default function Hero({ data, lang }) {
                     {/*<div className="absolute inset-0 bg-gradient-to-t from-navy-950/20 via-transparent to-transparent opacity-90" />*/}
 
                     {/* Content Container */}
-                    <div className="absolute bottom-[5rem] left-0 right-0 container mx-auto px-4 flex items-center">
+                    <div className="absolute bottom-3 lg:bottom-[5rem] left-0 right-0 container mx-auto px-4 flex items-center">
                       <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
-                        className="max-w-5xl backdrop-blur-sm bg-navy-950/20 p-8 rounded-2xl font-prata"
+                        className="max-w-5xl backdrop-blur-sm bg-navy-950/20 p-3 lg:p-8 rounded-2xl font-prata"
                       >
                         {/* Title, TODO: repair title by lang */}
-                        <h2 className="md:text-xl lg:text-xl mb-6 leading-tight text-white">
+                        <h2 className="md:text-xl lg:text-xl mb-0 lg:mb-6 leading-tight text-white">
                           {/* {slide[`title_${lang}`]} */} {slide.title}
                         </h2>
 
