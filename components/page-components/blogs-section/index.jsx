@@ -10,6 +10,7 @@ import { MotionButton } from "@/components/motion-components/motion-button";
 import { formatDate } from "@/utils/formatDate.util";
 import PCalendarIcon from "@/components/icon-components/calendar-icon";
 import BlogList from "@/components/page-components/blog-list";
+import { ChevronRight } from "lucide-react";
 
 const sectionTitle = {
   az: "Bloq",
@@ -22,12 +23,12 @@ const sectionButton = {
   ru: "Более",
 };
 
-export default function BlogsSection({ data, lang }) {
+export default function BlogsSection({ data, lang, title, variants }) {
   return (
     <div aria-label={sectionTitle[lang]} className="blogs-section">
-      <SectionWrapper>
+      <div className="container mx-auto px-4">
         <ScrollAnimationWrapper>
-          <SectionTitle title={sectionTitle[lang]} />
+          <SectionTitle title={title} variants={variants} />
         </ScrollAnimationWrapper>
         <BlogList data={data} lang={lang} />
         <ScrollAnimationWrapper>
@@ -40,14 +41,17 @@ export default function BlogsSection({ data, lang }) {
               <MotionButton
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.9 }}
-                className="bg-[#E1BB78] text-white px-10 py-2 rounded-full text-xl hover:bg-[#D1AB68] transition-colors"
+                className="bg-[#E1BB78] text-white px-10 py-2 rounded-full text-xl hover:bg-[#D1AB68] transition-colors flex items-center gap-2"
               >
-                <Link href={`/${lang}/blog`}>{sectionButton[lang]}</Link>
+                <Link href={`/${lang}/blog`}>
+                  {sectionButton[lang]}
+                </Link>
+                <ChevronRight className="h-4 w-4" />
               </MotionButton>
             </div>
           </MotionDiv>
         </ScrollAnimationWrapper>
-      </SectionWrapper>
+      </div>
     </div>
   );
 }

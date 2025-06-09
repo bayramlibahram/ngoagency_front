@@ -1,6 +1,9 @@
 import style from "./style.module.css";
 
 import SectionTitle from "@/components/custom-components/section-title";
+import SectionWrapper from "@/components/custom-components/section-wrapper";
+import BlogList from "@/components/page-components/blog-list";
+import BlogsSection from "@/components/page-components/blogs-section";
 import Hero from "@/components/page-components/hero";
 
 const data = [
@@ -48,8 +51,8 @@ const data = [
 const blogData = [
   {
     id: 1,
-    date: "1 May, 2023",
-    title: "QHT-lər üçün strateji planaşdırma",
+    post_date: "1 May, 2023",
+    post_title: "QHT-lər üçün strateji planaşdırma",
     src: "",
     alt: "",
     description: "Strateji planaşdırma üzrə təlimat və tövsiyələr",
@@ -60,8 +63,8 @@ const blogData = [
   },
   {
     id: 2,
-    date: "1 May, 2023",
-    title: "QHT-lər üçün strateji planaşdırma",
+    post_date: "1 May, 2023",
+    post_title: "QHT-lər üçün strateji planaşdırma",
     src: "",
     alt: "",
     description: "Strateji planaşdırma üzrə təlimat və tövsiyələr",
@@ -72,20 +75,8 @@ const blogData = [
   },
   {
     id: 3,
-    date: "1 May, 2023",
-    title: "QHT-lər üçün strateji planaşdırma",
-    src: "",
-    alt: "",
-    description: "Strateji planaşdırma üzrə təlimat və tövsiyələr",
-    tag: "Digər",
-    url: "#",
-    isNew: true,
-    views: 245,
-  },
-  {
-    id: 4,
-    date: "1 May, 2023",
-    title: "QHT-lər üçün strateji planaşdırma",
+    post_date: "1 May, 2023",
+    post_title: "QHT-lər üçün strateji planaşdırma",
     src: "",
     alt: "",
     description: "Strateji planaşdırma üzrə təlimat və tövsiyələr",
@@ -111,7 +102,12 @@ const HomeView = () => {
       <Hero data={data} lang={""} />
       
       <div className={`${style["custom-margin"]}`}>
-        <SectionTitle title={"Son Xəbərlər"} variants={containerVariants} />
+        <BlogsSection 
+          title={"Son Xəbərlər"}
+          variants={containerVariants}
+          data={blogData}
+          lang={"az"}
+        />
       </div>
     </div>
   );
