@@ -35,7 +35,7 @@ const HeaderTop = () => {
   };
 
   return (
-    <div ref={bannerRef} className="relative overflow-hidden bg-gray-50 border-b border-gold-500/20 dark:bg-navy-950 py-4">
+    <div ref={bannerRef} className="relative overflow-hidden border-b border-gold-500/20 dark:bg-navy-950 py-4">
       {/* Background Pattern */}
       <div className="absolute inset-0 flex flex-row flex-wrap gap-2 p-0.5 pointer-events-none" style={{ opacity: 0.1 }}>
         {Array.from({ length: 250 }).map((_, i) => (

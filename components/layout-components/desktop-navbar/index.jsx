@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 import {
   ChevronDown,
@@ -17,48 +18,7 @@ import {
 
 import { Input } from "@/components/ui/input";
 import { ThemeToggle } from "../theme/theme-toggle";
-
-const navigation = [
-  {
-    title: "Haqqımızda",
-    href: "/about",
-    children: [
-      { title: "Agentlik haqqında", href: "/about/agency" },
-      { title: "Rəhbərlik", href: "/about/leadership" },
-      { title: "Struktur", href: "/about/structure" },
-      { title: "Nizamnamə", href: "/about/charter" },
-    ],
-  },
-  {
-    title: "Qanunvericilik",
-    href: "/legislation",
-    children: [
-      { title: "Qanunlar", href: "/legislation/laws" },
-      { title: "Fərmanlar", href: "/legislation/decrees" },
-      { title: "Sərəncamlar", href: "/legislation/orders" },
-    ],
-  },
-  {
-    title: "Fəaliyyət",
-    href: "/activities",
-    children: [
-      { title: "E-xidmətlər", href: "/activities/e-services" },
-      { title: "Layihələr", href: "/activities/projects" },
-      { title: "Tədbirlər", href: "/activities/events" },
-    ],
-  },
-  {
-    title: "Media",
-    href: "/media",
-    children: [
-      { title: "Xəbərlər", href: "/media/news" },
-      { title: "Elanlar", href: "/media/announcements" },
-      { title: "Qalereya", href: "/media/gallery" },
-    ],
-  },
-  { title: "Müraciət", href: "/apply" },
-  { title: "Əlaqə", href: "/contact" },
-];
+import { navigation } from "@/lib/constants/navigation";
 
 const DesktopNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -97,7 +57,7 @@ const DesktopNavbar = () => {
     <div
       className={cn(
         "sticky top-0 z-50 transition-all duration-300 border-b",
-        isScrolled ? "bg-background/95 backdrop-blur-md shadow-sm" : "dark:bg-navy-950"
+        isScrolled ? "bg-background/95 backdrop-blur-md shadow-sm" : "dark:bg-white"
       )}
     >
       <div className="w-full">
@@ -194,22 +154,42 @@ const DesktopNavbar = () => {
                 onMouseEnter={() => handleDropdownHover(item.title)}
                 onMouseLeave={handleDropdownLeave}
               >
-                <a href={item.href} className="flex items-center nav-link px-4 py-2">
+                <Link href={item.href} className="flex items-center nav-link px-4 py-2">
                   {item.title}
                   {item.children && (
                     <ChevronDown className="ml-1 h-4 w-4 transition-transform group-hover:rotate-180" />
                   )}
-                </a>
+                </Link>
                 {item.children && activeDropdown === item.title && (
                   <div className="absolute top-full left-0 w-64 bg-popover shadow-lg rounded-lg py-2 animate-in fade-in-0 zoom-in-95 border">
                     {item.children.map((child) => (
-                      <a
-                        key={child.href}
-                        href={child.href}
-                        className="block px-4 py-2 text-sm text-popover-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
-                      >
-                        {child.title}
-                      </a>
+                      <div key={child.href} className="relative group/child">
+                        <Link
+                          href={child.href}
+                          className="flex items-center justify-between px-4 py-2 text-sm text-popover-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                        >
+                          <span className="flex items-center">
+                            {child.title}
+                            {child.isExternal && <span className="ml-2 text-xs">[PDF]</span>}
+                          </span>
+
+                          {child.children && <ChevronDown className="h-3 w-3 -rotate-90" />}
+                        </Link>
+                        {/* Nested submenu */}
+                        {child.children && (
+                          <div className="absolute left-full top-0 w-56 bg-popover shadow-lg rounded-lg py-2 border opacity-0 invisible group-hover/child:opacity-100 group-hover/child:visible transition-all duration-200 ml-1">
+                            {child.children.map((nestedChild) => (
+                              <Link
+                                key={nestedChild.href}
+                                href={nestedChild.href}
+                                className="w-full block text-left px-4 py-2 text-sm text-popover-foreground hover:bg-accent hover:text-accent-foreground transition-colors pl-6"
+                              >
+                                {nestedChild.title}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
                     ))}
                   </div>
                 )}
