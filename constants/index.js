@@ -1,3 +1,5 @@
+import { CalendarDays, CheckCircle, FileSpreadsheet, FileText, Film, Globe, HelpCircle, PieChart, Settings, Users2, Wallet2 } from "lucide-react";
+
 //TODO: implement n811 in future
 export const detailed_button = {
   az: "Ətraflı",
@@ -85,6 +87,97 @@ export const blogData = [
     views: 245,
   },
 ];
+
+export const CARD_DATA = [
+  {
+    title: "E-Ərizə",
+    description: "Sənədlərin elektron qəbulu və emalı",
+    icon: FileText,
+  },
+  {
+    title: "E-Müqavilə",
+    description: "Sənədlərin razılaşdırılması və müqavilələrin online imzalanması",
+    icon: CheckCircle,
+  },
+  {
+    title: "E-İdarəetmə",
+    description: "Layihələrin elektron idarə edilməsi",
+    icon: Settings,
+  },
+  {
+    title: "E-Hesabat",
+    description: "Təsviri və maliyyə hesabatlarının elektron qəbulu",
+    icon: PieChart,
+  }
+];
+
+export const stats = [
+  {
+    icon: <Wallet2 className="h-6 w-6 text-gold-600 dark:text-gold-400" />,
+    value: "145",
+    title: "Maliyyələşdirilən layihələr",
+    description: "Agentlik tərəfindən maliyyələşdirilən layihələrin sayı",
+    trend: { value: 12.5, isPositive: true }
+  },
+  {
+    icon: <CalendarDays className="h-6 w-6 text-gold-600 dark:text-gold-400" />,
+    value: "89",
+    title: "Keçirilən tədbirlər",
+    description: "Təşkil olunan tədbirlərin ümumi sayı",
+    trend: { value: 8.3, isPositive: true }
+  },
+  {
+    icon: <Users2 className="h-6 w-6 text-gold-600 dark:text-gold-400" />,
+    value: "234",
+    title: "Görüşlər",
+    description: "Reallaşdırılan görüşlərin sayı",
+    trend: { value: 15.2, isPositive: true }
+  },
+  {
+    icon: <FileSpreadsheet className="h-6 w-6 text-gold-600 dark:text-gold-400" />,
+    value: "56",
+    title: "Proqramlar",
+    description: "Hazırlanan və həyata keçirilən proqramların sayı",
+    trend: { value: 5.7, isPositive: true }
+  }
+];
+
+export const resources = [
+  {
+    icon: <Globe />,
+    title: "Saytlar",
+    description: "Agentliyin dəstəyi ilə hazırlanmış saytlar",
+    category: "Veb"
+  },
+  {
+    icon: <Film />,
+    title: "Filmlər",
+    description: "Agentliyin dəstəyi ilə hazırlanmış filmlər",
+    category: "Media"
+  },
+  {
+    icon: <FileText />,
+    title: "Nəşrlər",
+    description: "Agentliyin dəstəyi ilə hazırlanmış nəşrlər",
+    category: "Sənəd"
+  },
+  {
+    icon: <HelpCircle />,
+    title: "Digər",
+    description: "Agentliyin dəstəyi ilə hazırlanmış digər",
+    category: "Müxtəlif"
+  }
+];
+
+
+export const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.6 },
+  },
+};
 
 export const containerVariants = {
   hidden: { opacity: 0 },
