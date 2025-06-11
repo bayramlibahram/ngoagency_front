@@ -79,15 +79,12 @@ export default function BlogCard({ blog, lang }) {
           </div>
         </div>
 
-        <Link
-          href={blog.url}
-          className="inline-flex items-center text-gold-600 dark:text-gold-400 hover:text-gold-700 p-6 dark:hover:text-gold-300 font-medium group/link relative mt-auto"
-        >
+        <div className="inline-flex items-center text-gold-600 dark:text-gold-400 hover:text-gold-700 p-6 dark:hover:text-gold-300 font-medium group/link relative mt-auto">
           <span className="relative z-10">Daha ətraflı</span>
           <MotionP initial={{ x: 0 }} whileHover={{ x: 5 }} transition={{ duration: 0.3 }}>
             <ArrowRight className="ml-1 h-4 w-4" />
           </MotionP>
-        </Link>
+        </div>
       </Link>
     </article>
   );
