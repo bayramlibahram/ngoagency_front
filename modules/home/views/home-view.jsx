@@ -1,10 +1,10 @@
 import style from "./style.module.css";
 
-import SectionTitle from "@/components/custom-components/section-title";
-import SectionWrapper from "@/components/custom-components/section-wrapper";
-import BlogList from "@/components/page-components/blog-list";
 import BlogsSection from "@/components/page-components/blogs-section";
 import Hero from "@/components/page-components/hero";
+import FragmentDiv from "../components/ui/fragment-div";
+import PortalSection from "../components/portal-section";
+import StatsSection from "../components/stats-section";
 
 const data = [
   {
@@ -101,14 +101,19 @@ const HomeView = () => {
     <div className="mb-8">
       <Hero data={data} lang={""} />
       
-      <div className={`${style["custom-margin"]}`}>
+      <FragmentDiv style={style}>
         <BlogsSection 
           title={"Son Xəbərlər"}
           variants={containerVariants}
           data={blogData}
           lang={"az"}
         />
-      </div>
+      </FragmentDiv>
+
+      <FragmentDiv style={style}>
+        <PortalSection />
+      </FragmentDiv>
+
     </div>
   );
 };

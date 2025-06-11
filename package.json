@@ -2,6 +2,7 @@
   "name": "ngoagency_front",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev -p 5173 ",
     "build": "next build",
@@ -47,6 +48,6 @@
     "postcss": "^8",
     "prettier": "^3.2.5",
     "sass": "^1.83.4",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.11"
   }
 }

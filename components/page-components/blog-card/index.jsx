@@ -1,6 +1,6 @@
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import PCalendarIcon from "@/components/icon-components/calendar-icon";
 import { formatDate } from "@/utils/formatDate.util";
 import { ArrowRight, Eye } from "lucide-react";
