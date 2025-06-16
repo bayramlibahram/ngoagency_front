@@ -23,12 +23,12 @@ const sectionButton = {
   ru: "Более",
 };
 
-export default function BlogsSection({ data, lang, title, variants }) {
+export default function BlogsSection({ data, lang, title, variants,twVariants }) {
   return (
     <div aria-label={sectionTitle[lang]} className="blogs-section">
       <div className="container mx-auto px-4">
         <ScrollAnimationWrapper>
-          <SectionTitle title={title} variants={variants} />
+          <SectionTitle title={title} variants={variants} twVariants={twVariants} />
         </ScrollAnimationWrapper>
         <BlogList data={data} lang={lang} />
         <ScrollAnimationWrapper>

@@ -8,7 +8,7 @@ import { CARD_DATA, containerVariants, itemVariants } from "@/constants";
 import ScrollAnimationWrapper from "@/components/custom-components/scroll-animation";
 import SectionTitle from "@/components/custom-components/section-title";
 
-export default function PortalSection({title}) {
+export default function PortalSection({title, twVariants = {}}) {
   const MainCard = () => (
     <motion.div variants={itemVariants} className="h-full flex items-center">
       <Card className="md:h-[250px] bg-gradient-to-br from-gold-600 to-gold-500 dark:from-gold-500 dark:to-gold-600 text-white border-none shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden relative h-full transform hover:-translate-y-1">
@@ -61,7 +61,7 @@ export default function PortalSection({title}) {
     <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-gray-50 to-white dark:from-navy-950 dark:to-navy-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl items-center">
         <ScrollAnimationWrapper>
-          <SectionTitle title={title} variants={containerVariants} />
+          <SectionTitle title={title} variants={containerVariants} twVariants={twVariants}/>
         </ScrollAnimationWrapper>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12 items-center">

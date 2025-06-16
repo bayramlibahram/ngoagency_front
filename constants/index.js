@@ -1,4 +1,16 @@
-import { CalendarDays, CheckCircle, FileSpreadsheet, FileText, Film, Globe, HelpCircle, PieChart, Settings, Users2, Wallet2 } from "lucide-react";
+import {
+  CalendarDays,
+  CheckCircle,
+  FileSpreadsheet,
+  FileText,
+  Film,
+  Globe,
+  HelpCircle,
+  PieChart,
+  Settings,
+  Users2,
+  Wallet2,
+} from "lucide-react";
 
 //TODO: implement n811 in future
 export const detailed_button = {
@@ -108,7 +120,7 @@ export const CARD_DATA = [
     title: "E-Hesabat",
     description: "Təsviri və maliyyə hesabatlarının elektron qəbulu",
     icon: PieChart,
-  }
+  },
 ];
 
 export const stats = [
@@ -117,29 +129,29 @@ export const stats = [
     value: "145",
     title: "Maliyyələşdirilən layihələr",
     description: "Agentlik tərəfindən maliyyələşdirilən layihələrin sayı",
-    trend: { value: 12.5, isPositive: true }
+    trend: { value: 12.5, isPositive: true },
   },
   {
     icon: <CalendarDays className="h-6 w-6 text-gold-600 dark:text-gold-400" />,
     value: "89",
     title: "Keçirilən tədbirlər",
     description: "Təşkil olunan tədbirlərin ümumi sayı",
-    trend: { value: 8.3, isPositive: true }
+    trend: { value: 8.3, isPositive: true },
   },
   {
     icon: <Users2 className="h-6 w-6 text-gold-600 dark:text-gold-400" />,
     value: "234",
     title: "Görüşlər",
     description: "Reallaşdırılan görüşlərin sayı",
-    trend: { value: 15.2, isPositive: true }
+    trend: { value: 15.2, isPositive: true },
   },
   {
     icon: <FileSpreadsheet className="h-6 w-6 text-gold-600 dark:text-gold-400" />,
     value: "56",
     title: "Proqramlar",
     description: "Hazırlanan və həyata keçirilən proqramların sayı",
-    trend: { value: 5.7, isPositive: true }
-  }
+    trend: { value: 5.7, isPositive: true },
+  },
 ];
 
 export const resources = [
@@ -147,28 +159,27 @@ export const resources = [
     icon: <Globe />,
     title: "Saytlar",
     description: "Agentliyin dəstəyi ilə hazırlanmış saytlar",
-    category: "Veb"
+    category: "Veb",
   },
   {
     icon: <Film />,
     title: "Filmlər",
     description: "Agentliyin dəstəyi ilə hazırlanmış filmlər",
-    category: "Media"
+    category: "Media",
   },
   {
     icon: <FileText />,
     title: "Nəşrlər",
     description: "Agentliyin dəstəyi ilə hazırlanmış nəşrlər",
-    category: "Sənəd"
+    category: "Sənəd",
   },
   {
     icon: <HelpCircle />,
     title: "Digər",
     description: "Agentliyin dəstəyi ilə hazırlanmış digər",
-    category: "Müxtəlif"
-  }
+    category: "Müxtəlif",
+  },
 ];
-
 
 export const itemVariants = {
   hidden: { y: 20, opacity: 0 },
@@ -187,4 +198,30 @@ export const containerVariants = {
       staggerChildren: 0.1,
     },
   },
+};
+
+export const romanFontSectionTitleOptions = {
+  size: "large",
+  align: "center",
+  color: "secondary",
+  family: "roman",
+};
+export const interFontSectionLargeTitleOptions = {
+  size: "large",
+  align: "left",
+  color: "primary",
+  family: "inter",
+};
+export const interFontSectionMediumTitleOptions = {
+  size: "medium",
+  align: "left",
+  color: "primary",
+  family: "inter",
+  weight: "medium",
+};
+export const interFontSectionSmallTitleOptions = {
+  size: "small",
+  family: "inter",
+  weight: "medium",
+  color: "primary",
 };

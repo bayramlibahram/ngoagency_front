@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 
-export default function CardLightSection({ children }) {
-   return <Card className="p-6 hover:shadow-lg transition-shadow group">{children}</Card>
+
+export default function CardLightSection({ children,card }) {
+   return <Card className={`p-6 transition-shadow group ${card === "card" ? "hover:shadow-lg": ""}`}>{children}</Card>
 }

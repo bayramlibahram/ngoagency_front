@@ -1,6 +1,6 @@
 import React from "react";
 
-import { blogData, containerVariants, data } from "@/constants";
+import { blogData, containerVariants, data, romanFontSectionTitleOptions } from "@/constants";
 
 import CustomWrapper from "@/components/custom-components/custom-wrapper";
 import Hero from "@/components/page-components/hero";
@@ -20,16 +20,24 @@ export default function Page() {
           variants={containerVariants}
           data={blogData}
           lang={"az"}
+          twVariants={romanFontSectionTitleOptions}
         />
 
         {/* portal section */}
-        <PortalSection title={`Elektron Xidmətlər Portalı`}/>
+        <PortalSection 
+          title={`Elektron Xidmətlər Portalı`}
+          twVariants={romanFontSectionTitleOptions}
+        />
 
         {/* stats section */}
-        <StatsSection title={`Statistika`}/>
+        <StatsSection 
+          title={`Statistika`} 
+          twVariants={romanFontSectionTitleOptions}/>
 
         {/* resource section */}
-        <ResourceSection title={`Agentliyin dəstəyi ilə hazırlanmış`}/>
+        <ResourceSection 
+          title={`Agentliyin dəstəyi ilə hazırlanmış`}
+          twVariants={romanFontSectionTitleOptions}/>
       </CustomWrapper>
 
     </div>

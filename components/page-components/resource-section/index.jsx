@@ -30,7 +30,7 @@ const ResourceCard = ({ icon, title, description }) => (
   </motion.div>
 );
 
-export default function ResourceSection({ title }) {
+export default function ResourceSection({ title, twVariants = {} }) {
   return (
     <section className="py-16 md:py-20 bg-gradient-to-b from-background to-background/60">
       {/* Background Pattern */}
@@ -44,7 +44,7 @@ export default function ResourceSection({ title }) {
 
       <div className="container mx-auto px-4 relative">
         <ScrollAnimationWrapper>
-          <SectionTitle title={title} variants={containerVariants} />
+          <SectionTitle title={title} variants={containerVariants} twVariants={twVariants}/>
         </ScrollAnimationWrapper>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">

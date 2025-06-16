@@ -7,7 +7,7 @@ import ScrollAnimationWrapper from "@/components/custom-components/scroll-animat
 import SectionTitle from "@/components/custom-components/section-title";
 import { StatsCard } from "@/components/ui/stats-card";
 
-export default function StatsSection({ title }) {
+export default function StatsSection({ title, twVariants = {} }) {
   return (
     <section className="py-16 bg-gradient-to-b from-gray-50 to-white dark:from-navy-950 dark:to-navy-900 relative overflow-hidden">
       {/* Background Pattern */}
@@ -21,7 +21,7 @@ export default function StatsSection({ title }) {
 
       <div className="container mx-auto px-4 relative">
         <ScrollAnimationWrapper>
-          <SectionTitle title={title} variants={containerVariants} />
+          <SectionTitle title={title} variants={containerVariants} twVariants={twVariants}/>
         </ScrollAnimationWrapper>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
