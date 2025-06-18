@@ -7,6 +7,7 @@ const options = [
     size: {
       large: "text-3xl md:text-4xl",
       medium: "text-xl md:text-2xl",
+      normal: "text-xl",
       small: "text-base md:text-lg",
     },
     align: {
@@ -17,6 +18,7 @@ const options = [
     color: {
       primary: "text-gray-900",
       secondary: "text-gold-500",
+      gray: "text-[#212736]"
     },
     family: {
       inter: "font-[Inter, sans-serif]",

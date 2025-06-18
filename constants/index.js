@@ -225,3 +225,141 @@ export const interFontSectionSmallTitleOptions = {
   weight: "medium",
   color: "primary",
 };
+export const boardMembers = [
+  {
+    id: "1",
+    name: "Arif Əsədov",
+    position: "Müşahidə Şurasının Sədri",
+    image: "/global/ChatGPT Image Jun 17, 2025, 01_05_47 AM.png",
+    isFeatured: true,
+    biography: {
+      currentRole:
+        "Müşahidə Şurasının Sədri və Bakı Dövlət Universitetinin professoru olaraq agentliyin strateji istiqamətlərinin müəyyənləşdirilməsi və nəzarət funksiyalarının həyata keçirilməsində aparıcı rol oynayır.",
+      education: [
+        "Bakı Dövlət Universiteti, Hüquq fakültəsi (1985)",
+        "Moskvada Dövlət İdarəetmə Akademiyası, PhD (1992)",
+        "Harvard Universiteti, İdarəetmə proqramı (2001)",
+      ],
+      experience: [
+        "Bakı Dövlət Universiteti professoru (2005-indiyədək)",
+        "Ədliyyə Nazirliyində müşavir (1995-2005)",
+        "Beynəlxalq hüquq məsələləri üzrə ekspert (2000-indiyədək)",
+        "Müxtəlif dövlət komissiyalarında üzv",
+      ],
+      achievements: [
+        '"Əmək Veteranı" medalı (2015)',
+        "50-dən çox elmi məqalənin müəllifi",
+        "Beynəlxalq hüquq konfranslarında mütəmadi iştirakçı",
+        "QHT sektorunun inkişafı sahəsində ekspert",
+      ],
+    },
+  },
+  {
+    id: "2",
+    name: "Seymur Nasirov",
+    position: "Müşahidə Şurasının üzvü",
+    image: "/global/ChatGPT Image Jun 17, 2025, 01_06_41 AM.png",
+    biography: {
+      currentRole:
+        "Müşahidə Şurasının üzvü və İqtisadi İnkişaf Nazirliyinin sabiq müşaviri olaraq maliyyə siyasətinin formalaşdırılması və büdcə planlamasının nəzarəti sahələrində fəaliyyət göstərir.",
+      education: [
+        "Azərbaycan Dövlət İqtisad Universiteti, İqtisadiyyat (1988)",
+        "London School of Economics, Magistratura (1995)",
+        "Maliyyə idarəetməsi üzrə beynəlxalq sertifikatlar",
+      ],
+      experience: [
+        "İqtisadi İnkişaf Nazirliyində müşavir (2010-2020)",
+        "Dünya Bankı layihələrində koordinator (2005-2010)",
+        "Özəl sektor şirkətlərində maliyyə direktoru (1995-2005)",
+        "Beynəlxalq audit şirkətində senior auditor (1990-1995)",
+      ],
+      achievements: [
+        '"Əmək Fəxri" ordeni (2018)',
+        "Maliyyə sahəsində 25 illik təcrübə",
+        "Beynəlxalq maliyyə standartları üzrə ekspert",
+        "QHT maliyyələşdirməsi sahəsində ixtisaslaşma",
+      ],
+    },
+  },
+  {
+    id: "3",
+    name: "Leyla Məmmədova",
+    position: "Müşahidə Şurasının üzvü",
+    image: "/global/ChatGPT Image Jun 17, 2025, 01_12_41 AM.png",
+    biography: {
+      currentRole:
+        "Müşahidə Şurasının üzvü və İqtisadi İnkişaf Nazirliyinin sabiq müşaviri olaraq maliyyə siyasətinin formalaşdırılması və büdcə planlamasının nəzarəti sahələrində fəaliyyət göstərir.",
+      education: [
+        "Azərbaycan Dövlət İqtisad Universiteti, İqtisadiyyat (1988)",
+        "London School of Economics, Magistratura (1995)",
+        "Maliyyə idarəetməsi üzrə beynəlxalq sertifikatlar",
+      ],
+      experience: [
+        "İqtisadi İnkişaf Nazirliyində müşavir (2010-2020)",
+        "Dünya Bankı layihələrində koordinator (2005-2010)",
+        "Özəl sektor şirkətlərində maliyyə direktoru (1995-2005)",
+        "Beynəlxalq audit şirkətində senior auditor (1990-1995)",
+      ],
+      achievements: [
+        '"Əmək Fəxri" ordeni (2018)',
+        "Maliyyə sahəsində 25 illik təcrübə",
+        "Beynəlxalq maliyyə standartları üzrə ekspert",
+        "QHT maliyyələşdirməsi sahəsində ixtisaslaşma",
+      ],
+    },
+  },
+  {
+    id: "4",
+    name: "Rəşad Quliyev",
+    position: "Müşahidə Şurasının üzvü",
+    image: "/global/ChatGPT Image Jun 17, 2025, 01_08_33 AM.png",
+    biography: {
+      currentRole:
+        "Müşahidə Şurasının üzvü və vətəndaş cəmiyyəti eksperti olaraq QHT sektorunun inkişaf strategiyalarının hazırlanması və beynəlxalq təcrübənin tətbiqi sahələrində çalışır.",
+      education: [
+        "Azərbaycan Universiteti, Beynəlxalq münasibətlər (1992)",
+        "Georgetown University, Magistratura (1998)",
+        "Vətəndaş cəmiyyəti idarəetməsi üzrə ixtisaslaşma kursları",
+      ],
+      experience: [
+        "Müxtəlif QHT-lərdə rəhbər vəzifələr (2000-indiyədək)",
+        "USAID layihələrində koordinator (2005-2015)",
+        "Avropa İttifaqı proqramlarında ekspert (2010-indiyədək)",
+        "Vətəndaş cəmiyyəti təlimçisi və konsultant",
+      ],
+      achievements: [
+        "Vətəndaş cəmiyyəti sahəsində 20+ illik təcrübə",
+        "Beynəlxalq QHT şəbəkələrinin üzvü",
+        "Vətəndaş cəmiyyəti inkişafı üzrə məqalələrin müəllifi",
+        "QHT potensialının gücləndirilməsi proqramlarının təşkilatçısı",
+      ],
+    },
+  },
+  {
+    id: "5",
+    name: "Səbinə Əliyeva",
+    position: "Müşahidə Şurasının üzvü",
+    image: "/global/ChatGPT Image Jun 17, 2025, 01_12_41 AM.png",
+    biography: {
+      currentRole:
+        "Müşahidə Şurasının üzvü və sosial inkişaf eksperti olaraq sosial layihələrin qiymətləndirilməsi və gender bərabərliyi məsələlərinin nəzarəti sahələrində fəaliyyət göstərir.",
+      education: [
+        "Azərbaycan Dövlət Universiteti, Sosiologiya (1990)",
+        "Oslo Universiteti, PhD Sosial siyasət (1997)",
+        "Gender tədqiqatları üzrə beynəlxalq ixtisaslaşma",
+      ],
+      experience: [
+        "BMT Qadınlar Təşkilatında koordinator (2000-2015)",
+        "Sosial inkişaf layihələrində ekspert (1998-indiyədək)",
+        "Universitetlərdə sosial siyasət müəllimi (2005-indiyədək)",
+        "Qeyri-hökumət təşkilatlarında konsultant",
+      ],
+      achievements: [
+        "Sosial inkişaf sahəsində beynəlxalq təqdirlər",
+        "Gender bərabərliyi üzrə milli strategiyanın hazırlanmasında iştirak",
+        "Sosial siyasət üzrə 40+ elmi əsərin müəllifi",
+        "Beynəlxalq sosial inkişaf konfranslarının təşkilatçısı",
+      ],
+    },
+  },
+];

@@ -1,9 +1,10 @@
+import CustomHeroWrapper from "@/components/custom-components/custom-hero-wrapper";
 import SectionTitle from "@/components/custom-components/section-title";
 import { MotionDiv } from "@/components/motion-components/motion-div";
 
 export default function AboutHero() {
   return (
-    <section className="bg-[#f8f9fa] rounded-lg overflow-hidden mb-16">
+    <CustomHeroWrapper>
       <div className="flex flex-col lg:flex-row">
         <MotionDiv
           className="lg:w-[40%]"
@@ -13,7 +14,7 @@ export default function AboutHero() {
           transition={{ duration: 0.6 }}
         >
           <img
-            src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg"
+            src="/global/ILHAM_ALIYEV.jpg"
             alt="Agency workspace"
             className="w-full h-full object-cover"
           />
@@ -25,7 +26,7 @@ export default function AboutHero() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <SectionTitle 
+          <SectionTitle
             title={"Qeyri-Hökumət Təşkilatlarına Dövlət Dəstəyi Agentliyi"}
             twVariants={{
               size: "large",
@@ -46,6 +47,6 @@ export default function AboutHero() {
           </div>
         </MotionDiv>
       </div>
-    </section>
+    </CustomHeroWrapper>
   );
 }
