@@ -225,6 +225,7 @@ export const interFontSectionSmallTitleOptions = {
   weight: "medium",
   color: "primary",
 };
+
 export const boardMembers = [
   {
     id: "1",
@@ -362,4 +363,72 @@ export const boardMembers = [
       ],
     },
   },
+];
+
+export const DirectorInfo = {
+  name: "Aygün Əliyeva",
+  position: "İcraçı direktor",
+  image: "/global/E6p4wsnlrHoTbiKLOIcC1BxQLtChtjS1GmVkm0fS.jpg",
+  biography:
+    "Qeyri-Hökumət Təşkilatlarına Dövlət Dəstəyi Agentliyinin İcraçı direktoru olaraq, vətəndaş cəmiyyətinin inkişafı və QHT-lərin fəaliyyətinin təkmilləşdirilməsi istiqamətində dövlət siyasətinin həyata keçirilməsində aparıcı rol oynayır. 15 ildən artıq dövlət idarəetməsi və ictimai sektor təcrübəsi ilə agentliyin strateji hədəflərinin reallaşdırılmasını təmin edir.",
+  education:
+    "Bakı Dövlət Universiteti, Beynəlxalq münasibətlər fakültəsi (2005), London School of Economics, Magistratura - İctimai siyasət (2008), Harvard Kennedy School, İdarəetmə proqramı (2015)",
+  experience:
+    "QHT-lərə Dövlət Dəstəyi Agentliyi İcraçı direktoru (2021-indiyədək), Sosial İnkişaf Nazirliyində departament müdiri (2015-2021), BMT Qadınlar Təşkilatında milli koordinator (2010-2015)",
+  contact: {
+    email: "director@ngoagency.gov.az",
+    phone: "+994 (12) 493-37-17",
+    address: "Bakı şəhəri, Nərimanov rayonu, Əhməd Rəcəbli küçəsi 1, AZ1052",
+  },
+};
+
+export const Deputies = [
+  {
+    name: "Əli Məmmədov",
+    title: "Baş direktor müavini",
+    responsibilities: [
+      "Strateji planlaşdırma",
+      "Beynəlxalq əməkdaşlıq",
+      "İnnovasiya layihələri"
+    ],
+    photo: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg",
+    department: "Strateji İnkişaf Departamenti",
+    initiatives: [
+      "QHT-lərin potensialının gücləndirilməsi",
+      "Beynəlxalq tərəfdaşlıq proqramları",
+      "İnnovasiya mərkəzlərinin yaradılması"
+    ]
+  },
+  {
+    name: "Aynur Hüseynova",
+    title: "Baş direktor müavini",
+    responsibilities: [
+      "Maliyyə və büdcə",
+      "İnsan resursları",
+      "İnzibati idarəetmə"
+    ],
+    photo: "https://images.pexels.com/photos/3796217/pexels-photo-3796217.jpeg",
+    department: "Maliyyə və İnzibati Departament",
+    initiatives: [
+      "Maliyyə idarəetmə sisteminin təkmilləşdirilməsi",
+      "Kadr potensialının inkişafı",
+      "İdarəetmə proseslərinin optimallaşdırılması"
+    ]
+  },
+  {
+    name: "Rəşad Əliyev",
+    title: "Baş direktor müavini",
+    responsibilities: [
+      "Layihələrin idarə edilməsi",
+      "Monitorinq və qiymətləndirmə",
+      "Hesabatlılıq"
+    ],
+    photo: "https://images.pexels.com/photos/3785104/pexels-photo-3785104.jpeg",
+    department: "Layihələr Departamenti",
+    initiatives: [
+      "Layihə idarəetmə sisteminin modernləşdirilməsi",
+      "Nəticəyə əsaslanan monitorinq",
+      "Şəffaflıq və hesabatlılıq mexanizmlərinin gücləndirilməsi"
+    ]
+  }
 ];

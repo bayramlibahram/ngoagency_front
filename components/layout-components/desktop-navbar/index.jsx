@@ -154,34 +154,56 @@ const DesktopNavbar = () => {
                 onMouseEnter={() => handleDropdownHover(item.title)}
                 onMouseLeave={handleDropdownLeave}
               >
-                <Link href={item.href} className="flex items-center nav-link px-4 py-2">
+                {item.href === "#" ? (
+                  <p className={`flex items-center nav-link px-4 py-2`} 
+                >
+                  {item.title}
+                  {item.children && (
+                    <ChevronDown className="ml-1 h-4 w-4 transition-transform group-hover:rotate-180" />
+                  )}
+                </p>
+                ): (
+                  <Link href={"/az" + item.href} className={`flex items-center nav-link px-4 py-2`} 
+                >
                   {item.title}
                   {item.children && (
                     <ChevronDown className="ml-1 h-4 w-4 transition-transform group-hover:rotate-180" />
                   )}
                 </Link>
+                )}
                 {item.children && activeDropdown === item.title && (
                   <div className="absolute top-full left-0 w-64 bg-popover shadow-lg rounded-lg py-2 animate-in fade-in-0 zoom-in-95 border">
                     {item.children.map((child) => (
-                      <div key={child.href} className="relative group/child">
-                        <Link
-                          href={child.href}
+                      <div key={child.title} className="relative group/child">
+                        {child.href === "#" ? (
+                          <p
                           className="flex items-center justify-between px-4 py-2 text-sm text-popover-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
                         >
                           <span className="flex items-center">
                             {child.title}
-                            {child.isExternal && <span className="ml-2 text-xs">[PDF]</span>}
+                          </span>
+
+                          {child.children && <ChevronDown className="h-3 w-3 -rotate-90" />}
+                        </p>
+                        ): (
+                          <Link
+                          href={"/az" + child.href}
+                          className="flex items-center justify-between px-4 py-2 text-sm text-popover-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                        >
+                          <span className="flex items-center">
+                            {child.title}
                           </span>
 
                           {child.children && <ChevronDown className="h-3 w-3 -rotate-90" />}
                         </Link>
+                        )}
                         {/* Nested submenu */}
                         {child.children && (
                           <div className="absolute left-full top-0 w-56 bg-popover shadow-lg rounded-lg py-2 border opacity-0 invisible group-hover/child:opacity-100 group-hover/child:visible transition-all duration-200 ml-1">
                             {child.children.map((nestedChild) => (
                               <Link
                                 key={nestedChild.href}
-                                href={nestedChild.href}
+                                href={"/az" + nestedChild.href}
                                 className="w-full block text-left px-4 py-2 text-sm text-popover-foreground hover:bg-accent hover:text-accent-foreground transition-colors pl-6"
                               >
                                 {nestedChild.title}
