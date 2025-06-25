@@ -19,6 +19,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { ThemeToggle } from "../theme/theme-toggle";
 import { navigation } from "@/lib/constants/navigation";
+import XComIcon from "@/components/icon-components/xcom-icon";
 
 const DesktopNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -108,7 +109,7 @@ const DesktopNavbar = () => {
                     href="#"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    <Twitter className="h-5 w-5" />
+                    <XComIcon  />
                   </a>
                   <a
                     href="#"
@@ -293,7 +294,7 @@ const DesktopNavbar = () => {
                     href="#"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    <Twitter className="h-5 w-5" />
+                    <XComIcon />
                   </a>
                   <a
                     href="#"
