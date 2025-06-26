@@ -1,7 +1,13 @@
 import React from "react";
 
+import AboutSection from "@/components/page-components/about-section";
+
 const page = () => {
-  return <div className="w-[90%] m-auto">About Page</div>;
+  return (
+      <div>
+        <AboutSection />
+      </div>
+  );
 };
 
 export default page;

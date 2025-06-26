@@ -1,7 +1,8 @@
 import React from "react";
-import Link from "next/link";  
+import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { navigation } from "@/lib/constants/navigation";
+import CustomContainer from "@/components/custom-components/custom-container";
 
 const Footer = () => {
   return (
@@ -17,7 +18,7 @@ const Footer = () => {
 
       <div className="relative">
         {/* Main Footer Content */}
-        <div className="container mx-auto px-4 py-16">
+        <CustomContainer>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
             {/* Logo and About Section */}
             <div className="space-y-6">
@@ -72,16 +73,16 @@ const Footer = () => {
             <div>
               <h3 className="text-lg font-bold mb-6 text-gold-500">Sürətli Keçid</h3>
               <ul className="space-y-4">
-                {navigation.map((item,index) => (
-                    <li key={index}>
-                      <Link
-                        href={item.href}
-                        className="text-gray-400 hover:text-gold-500 transition-colors duration-300 flex items-center"
-                      >
-                        <span className="w-1.5 h-1.5 bg-gold-500 rounded-full mr-2"></span>
-                        {item.title}
-                      </Link>
-                    </li>
+                {navigation.map((item, index) => (
+                  <li key={index}>
+                    <Link
+                      href={item.href}
+                      className="text-gray-400 hover:text-gold-500 transition-colors duration-300 flex items-center"
+                    >
+                      <span className="w-1.5 h-1.5 bg-gold-500 rounded-full mr-2"></span>
+                      {item.title}
+                    </Link>
+                  </li>
                 ))}
               </ul>
             </div>
@@ -169,7 +170,7 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-        </div>
+        </CustomContainer>
 
         {/* Bottom Bar */}
         <div className="border-t border-navy-800/50">

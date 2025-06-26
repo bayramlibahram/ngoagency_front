@@ -1,8 +1,56 @@
+import { cn } from "@/lib/utils";
 import { MotionH1 } from "@/components/motion-components/motion-h1";
 import { MotionDiv } from "@/components/motion-components/motion-div";
-import { cn } from "@/lib/utils";
 
-export default function SectionTitle({ title,variants,clsName }) {
+const options = [
+  {
+    size: {
+      large: "text-3xl md:text-4xl",
+      medium: "text-xl md:text-2xl",
+      normal: "text-xl",
+      small: "text-base md:text-lg",
+    },
+    align: {
+      left: "text-start",
+      center: "text-center",
+      right: "text-end",
+    },
+    color: {
+      primary: "text-gray-900",
+      secondary: "text-gold-500",
+      gray: "text-[#212736]"
+    },
+    family: {
+      inter: "font-[Inter, sans-serif]",
+      roman: "font-['Times_New_Roman']",
+    },
+    weight: {
+      normal: "font-normal",
+      medium: "font-semibold",
+      bold: "font-bold",
+    }
+  },
+];
+
+export default function SectionTitle({ title,twVariants = {}, variants, clsName }) {
+  const config = options[0];
+
+  
+  const sizeClass = config.size[twVariants.size];
+  const alignClass = config.align[twVariants.align];
+  const colorClass = config.color[twVariants.color];
+  const weightClass = config.weight[twVariants.weight];
+  const familyClass = config.family[twVariants.family];
+
+  const finalClassName = cn(
+    "relative mb-6 tracking-wide font-bold", // static styles
+    sizeClass,
+    alignClass,
+    colorClass,
+    weightClass,
+    familyClass,
+    clsName
+  );
   return (
     <>
       <MotionH1
@@ -11,10 +59,7 @@ export default function SectionTitle({ title,variants,clsName }) {
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
         variants={variants}
-        className={cn(
-          "relative text-center text-3xl md:text-4xl font-bold text-gold-500 mb-6 font-['Times_New_Roman'] tracking-wide",
-          clsName
-        )}
+        className={finalClassName}
       >
         {title}
       </MotionH1>

@@ -50,7 +50,7 @@ export default function Hero({ data, lang }) {
                       <img
                         src={slide.images.mobile}
                         alt={slide.title}
-                        className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-[2s] hover:scale-110"
+                        className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-[2s]"
                         loading={index === 0 ? "eager" : "lazy"}
                         // sizes="100vw"
                       />

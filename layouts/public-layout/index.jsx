@@ -40,7 +40,7 @@ export default async function PublicLayout({ children, lang }) {
   // ]);
 
   return (
-    <div className="flex flex-col" style={{ minHeight: "100vh" }}>
+    <div className="flex flex-col bg-white" style={{ minHeight: "100vh" }}>
       <Header />
       <LayoutMain>{children}</LayoutMain>
       <Footer />

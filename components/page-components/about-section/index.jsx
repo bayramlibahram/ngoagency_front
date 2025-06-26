@@ -1,13 +1,20 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import parseHtml from "@/lib/html-parser";
-import SectionTitle from "@/components/custom-components/section-title";
 import SectionWrapper from "@/components/custom-components/section-wrapper";
 import ScrollAnimationWrapper from "@/components/custom-components/scroll-animation";
 import { MotionDiv } from "@/components/motion-components/motion-div";
 import { MotionButton } from "@/components/motion-components/motion-button";
 import { detailed_button } from "@/constants";
+import AboutHero from "../about-hero";
+import { ChevronRight } from "lucide-react";
+import CardLightSection from "@/components/custom-components/card-light-section";
+import CustomPageSection from "@/components/custom-components/custom-page-section";
+import CustomContainer from "@/components/custom-components/custom-container";
+import PageHeader from "@/components/layout-components/page-header";
 
 const section_title = {
   az: "Haqqımızda",
@@ -15,59 +22,68 @@ const section_title = {
   ru: "О нас",
 };
 
+// card-lar eyni olduguna gore burada component kimi yazib asagida props-lar ile temin edilecekler.
+const CardLightContents = ({ title, description, link }) => (
+  <MotionDiv
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.5 }}
+  >
+    <Link href={link}>
+      <CardLightSection card="card">
+        <h3 className="text-xl font-semibold mb-3 group-hover:text-gold-500 transition-colors">
+          {title}
+        </h3>
+        <p className="text-gray-600 mb-4">{description}</p>
+        <div className="flex items-center text-gold-500 group-hover:translate-x-2 transition-transform">
+          Ətraflı
+          <ChevronRight className="h-4 w-4 ml-1" />
+        </div>
+      </CardLightSection>
+    </Link>
+  </MotionDiv>
+);
+
 export default function AboutSection({ lang, data, section_padding }) {
+  const breadcrumbs = [{ label: "Haqqımızda" }];
   return (
     <div aria-label="About Section">
-      <SectionWrapper>
-        <ScrollAnimationWrapper>
-          <SectionTitle title={section_title[lang]} />
+      <PageHeader
+        title="Haqqımızda"
+        subtitle="Qeyri-Hökumət Təşkilatlarına Dövlət Dəstəyi Agentliyi haqqında ümumi məlumat"
+        breadcrumbs={breadcrumbs}
+      />
+      <CustomContainer>
+        <CustomPageSection>
           <MotionDiv
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex flex-col md:flex-row items-center gap-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
           >
-            <MotionDiv
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-              className="md:w-1/2"
-            >
-              <Image
-                src={`/media-sources/${data?.image}` || "/image-pomegranate.png"}
-                alt="image-pomegranate"
-                width={500}
-                height={500}
-                className="w-full h-auto"
-                priority
+            <AboutHero />
+            <section className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              <CardLightContents
+                title={`Ümumi məlumat`}
+                description={`Agentliyin yaranma tarixi, inkişaf mərhələləri və əsas nailiyyətləri haqqında məlumat.`}
+                link={"/about/general-info"}
               />
-            </MotionDiv>
 
-            <MotionDiv
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
-              className="md:w-1/2 space-y-6"
-            >
-              <h2 className={`font-prata text-2xl md:text-3xl text-gray-700`}>
-                {data?.[`name_${lang}`]}
-              </h2>
+              <CardLightContents
+                title={`Missiyamız`}
+                description={`Agentliyin missiyası, dəyərləri və gələcək hədəfləri haqqında məlumat.`}
+                link={"/mission"}
+              />
 
-              <p className="text-gray-600 leading-relaxed line-clamp-6 text-justify tracking-tight">
-                {parseHtml(data?.[`content_${lang}`])}
-              </p>
-
-              <MotionButton
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-[#E1BB78] text-white px-10 py-2 rounded-full text-xl hover:bg-[#D1AB68] transition-colors"
-              >
-                <Link href={`/${lang}/aboutus/aniia`}>{detailed_button[lang]}</Link>
-              </MotionButton>
-            </MotionDiv>
+              <CardLightContents
+                title={`Nizamnamə`}
+                description={`Agentliyin nizamnaməsi və fəaliyyətini tənzimləyən digər sənədlər.`}
+                link={"/charter"}
+              />
+            </section>
           </MotionDiv>
-        </ScrollAnimationWrapper>
-      </SectionWrapper>
+        </CustomPageSection>
+      </CustomContainer>
     </div>
   );
 }
